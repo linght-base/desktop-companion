@@ -1,0 +1,97 @@
+/* Copyright (c) 2026 Shenzhen Guangbo Technology Co., Ltd. */
+/* SPDX-License-Identifier: Apache-2.0 */
+/* 圆屏瞬间漫画画廊：一切尺寸按 412 圆屏画布，圆形裁切由 face clipPath 与圆角共同保证。 */
+.moment-gallery-svg { pointer-events: none; }
+.moment-gallery-space { width: 412px; height: 412px; position: relative; }
+.moment-gallery-host { position: relative; }
+.moment-gallery {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  overflow: hidden;
+  background: #07110e;
+  pointer-events: auto;
+  touch-action: pan-y;
+}
+.moment-gallery[hidden] { display: none; }
+.moment-gallery-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.moment-gallery-caption {
+  position: absolute;
+  left: 15%;
+  right: 15%;
+  bottom: 17%;
+  padding: 6px 10px;
+  border-radius: 12px;
+  background: rgba(7, 17, 14, .72);
+  color: #f3f0e8;
+  text-align: center;
+  pointer-events: none;
+}
+.moment-gallery-caption[hidden] { display: none; }
+.moment-gallery-title { display: block; font-size: 13px; font-weight: 600; }
+.moment-gallery-encouragement { margin: 2px 0 0; font-size: 12px; line-height: 1.4; }
+.moment-gallery-position {
+  position: absolute;
+  top: 14%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 12px;
+  color: #a9cfc3;
+  pointer-events: none;
+}
+.moment-gallery-nav { position: absolute; inset: 0; pointer-events: none; }
+.moment-gallery-nav-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(7, 17, 14, .55);
+  pointer-events: auto;
+  cursor: pointer;
+  padding: 8px;
+}
+.moment-gallery-nav-button svg { width: 100%; height: 100%; }
+.moment-gallery-nav-button path { fill: none; stroke: #c1ed8d; stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round; }
+.moment-gallery-nav-button:disabled { opacity: .25; cursor: default; }
+.moment-gallery-previous { left: 8%; }
+.moment-gallery-next { right: 8%; }
+.moment-gallery-return {
+  position: absolute;
+  bottom: 7%;
+  left: 50%;
+  transform: translateX(-50%);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 18px;
+  border: 0;
+  border-radius: 999px;
+  background: #3b4544;
+  color: #f7e6cb;
+  font-size: 14px;
+  cursor: pointer;
+}
+.moment-gallery-return svg { width: 16px; height: 16px; }
+.moment-gallery-return path { fill: none; stroke: currentColor; stroke-width: 2.4; stroke-linecap: round; }
+.moment-gallery-empty {
+  position: absolute;
+  left: 50%;
+  bottom: 22%;
+  transform: translateX(-50%);
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: rgba(7, 17, 14, .72);
+  color: #a9cfc3;
+  font-size: 13px;
+  pointer-events: none;
+}
+.moment-gallery-empty[hidden] { display: none; }

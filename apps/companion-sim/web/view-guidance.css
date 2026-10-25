@@ -1,0 +1,33 @@
+/* Copyright (c) 2026 Shenzhen Guangbo Technology Co., Ltd. */
+/* SPDX-License-Identifier: Apache-2.0 */
+.view-guidance-layer {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  overflow: hidden;
+  pointer-events: none;
+  contain: layout paint;
+}
+.view-guidance-layer[hidden] { display: none; }
+.view-guidance-svg-layer { display: initial; }
+.view-guidance-layer svg {
+  width: 44%;
+  height: 44%;
+  overflow: visible;
+  color: var(--robot-guidance-color, #b7e4d0);
+  filter: drop-shadow(0 0 3px #071b18);
+}
+.view-guidance-layer path {
+  stroke: currentColor;
+  stroke-width: 4;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  fill: none;
+}
+.view-guidance-layer .view-guidance-center {
+  stroke-width: 2;
+  fill: currentColor;
+}

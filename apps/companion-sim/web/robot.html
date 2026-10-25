@@ -1,0 +1,25 @@
+<!doctype html>
+<!-- Copyright (c) 2026 Shenzhen Guangbo Technology Co., Ltd. -->
+<!-- SPDX-License-Identifier: Apache-2.0 -->
+<html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>ROBOT · 它正带着什么理解你</title><link rel="stylesheet" href="/styles.css"></head><body>
+<aside class="sidebar" aria-label="工作台导航">
+  <a class="brand" href="/#workspace"><span class="brand-symbol" aria-hidden="true">◐</span><span>L-ROBOT<small>DESKTOP COMPANION</small></span></a>
+  <div class="nav-section">一体陪伴空间</div>
+  <a class="nav-link" href="/#workspace"><span aria-hidden="true">◉</span> <span id="workspace-nav-label">陪伴</span> <span class="nav-index">01</span></a>
+  <a class="nav-link" href="/#daily-moments"><span aria-hidden="true">▧</span> 值得回忆 <span class="nav-index">02</span></a>
+  <a class="nav-link selected" href="/robot.html"><span aria-hidden="true">◐</span> ROBOT <span class="nav-index">03</span></a>
+  <a class="nav-link" href="/#continuity"><span aria-hidden="true">▤</span> 相处记录 <span class="nav-index">04</span></a>
+  <div class="sidebar-bottom"><span class="small-dot"></span> 本机 · 无声交互<p>持续理解、人物上下文与实际决策依据。</p></div>
+</aside>
+<div class="main-shell"><header class="topbar"><span>ROBOT / 持续理解</span><a href="/#workspace">返回陪伴</a></header><main><div class="page-heading"><div><span class="eyebrow">ROBOT / MIND AND MEMORY</span><h1>它正带着什么理解你</h1><p>查看实际提示词、上下文与漫画人物的外观依据。</p></div></div>
+  <section id="agent-brain" class="card" aria-label="Pi 决策依据">
+    <div class="card-heading"><div><span class="eyebrow">PI / CONTINUITY</span><h2>它正带着什么理解你</h2></div><button class="text-button">刷新实际上下文</button></div>
+    <p class="section-intro">同一个 Pi 累积看到的片段、自己的反馈与后续反应。文字历史按估算 Token 限制和压缩；当前原图只在内存。</p>
+    <pre data-context-status class="brain-status">等待首轮上下文</pre>
+    <details open><summary>当前行为提示词 · 模型决策与动作的依据</summary><pre data-behavior class="brain-text"></pre></details>
+    <details><summary>完整实际系统提示词 · 含工具与宿主边界</summary><pre data-prompt class="brain-text"></pre></details>
+    <details><summary>当前文字上下文与压缩记录</summary><pre data-context class="brain-text"></pre></details>
+    <details><summary>半小时事实漫画提示词 · 配置与最近一次实际加载</summary><pre data-moment-prompt class="brain-text"></pre></details>
+    <details open><summary>Kimi 后台执行状态</summary><div data-tasks aria-live="polite"></div></details>
+  </section>
+<section class="card" aria-label="漫画人物上下文"><div class="card-heading"><h2>漫画中的人物上下文</h2><span class="badge">外观关联 · 身份未知</span></div><p class="section-intro">脸型、发型、胡须与眼镜作为角色外观锚点；衣着每个时刻重新观察。无法确认同一人时分别保存。</p><div data-character-context class="product-record-list"><p class="empty">等待读取人物上下文。</p></div></section></main></div><script type="module" src="/robot-inspector-page.js"></script></body></html>

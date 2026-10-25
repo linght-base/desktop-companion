@@ -1,0 +1,43 @@
+/* Copyright (c) 2026 Shenzhen Guangbo Technology Co., Ltd. */
+/* SPDX-License-Identifier: Apache-2.0 */
+/* Linght business UI · reference: L-ROBOT console at localhost:8787 */
+:root {
+  --linght-bg: #f5f5ef;
+  --linght-sidebar: #f9faf5;
+  --linght-surface: #fffef8;
+  --linght-ink: #233c32;
+  --linght-muted: #75836d;
+  --linght-subtle: #8d9982;
+  --linght-line: #e1e5d9;
+  --linght-line-soft: #e9ecdf;
+  --linght-forest: #18382c;
+  --linght-forest-hover: #3a5d42;
+  --linght-selected: #e5edda;
+  --linght-tint: #ecf1df;
+  --linght-primary: #c1ed8d;
+  --linght-primary-hover: #b3e37a;
+  --linght-primary-ink: #2f4e25;
+  --linght-focus: #82b24e;
+  --linght-success: #517444;
+  --linght-success-bg: #eaf2da;
+  --linght-warning: #90602b;
+  --linght-warning-bg: #faf0df;
+  --linght-danger: #a45a40;
+  --linght-danger-bg: #f5e7de;
+  --linght-font: 'DM Sans', -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  --linght-mono: ui-monospace, SFMono-Regular, Menlo, monospace;
+  --linght-sidebar-width: 226px;
+  --linght-topbar-height: 76px;
+  --linght-content-max: 1550px;
+  --linght-radius-card: 15px;
+  --linght-radius-control: 8px;
+  --linght-radius-nav: 9px;
+  --linght-space-1: 4px;
+  --linght-space-2: 8px;
+  --linght-space-3: 12px;
+  --linght-space-4: 16px;
+  --linght-space-5: 20px;
+  --linght-space-6: 24px;
+  --linght-space-8: 32px;
+  --linght-motion: 180ms;
+}

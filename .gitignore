@@ -1,0 +1,16 @@
+.runtime/
+node_modules/
+**/node_modules/
+__pycache__/
+**/__pycache__/
+.venv/
+.env
+.env.*
+.DS_Store
+*.log
+*.sqlite
+*.sqlite3
+*.db
+settings.json
+runtime.json
+release-check.json

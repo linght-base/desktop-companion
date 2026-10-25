@@ -1,0 +1,7 @@
+# Isolated companion WebRTC receiver; do not install into the physical robot environment.
+aiortc==1.15.0
+av==17.1.0
+Pillow==12.1.0
+# Local face positions only; no identity embeddings.
+opencv-python-headless==4.12.0.88
+numpy==2.2.6

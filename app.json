@@ -1,0 +1,12 @@
+{
+  "schema_version": 2,
+  "id": "local.linght.desktop_companion",
+  "name": "桌面伙伴",
+  "version": "0.1.0",
+  "requires_watcherobot": ">=0.1.10,<0.2",
+  "supported_host_platforms": ["macos"],
+  "dependencies": ["Pillow>=12,<13"],
+  "description": "在桌前留意你的日常，用眼神、转头和一句短话回应，把值得记住的片段画成漫画。",
+  "author": "Shenzhen Guangbo Technology Co., Ltd.",
+  "icon": "icon.svg"
+}

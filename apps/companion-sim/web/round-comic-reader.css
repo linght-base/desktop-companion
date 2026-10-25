@@ -1,0 +1,89 @@
+/* Copyright (c) 2026 Shenzhen Guangbo Technology Co., Ltd. */
+/* SPDX-License-Identifier: Apache-2.0 */
+/* 每日漫画圆屏阅读器：挂在 #robot-face（412×412，随头转动）内。配色沿用圆屏输入模块的暗绿体系。 */
+.round-comic-reader-host { position: relative; }
+.round-comic-reader-svg { overflow: visible; pointer-events: none; }
+.round-comic-reader-space { position: relative; width: 412px; height: 412px; pointer-events: none; }
+.round-comic-reader { position: absolute; inset: 0; pointer-events: none; }
+.round-comic-reader [hidden] { display: none !important; }
+
+/* 入口：圆屏左下角的小画册图形按钮，不遮挡眼睛区域。 */
+.round-comic-entrance {
+  appearance: none;
+  position: absolute;
+  left: 64px;
+  top: 284px;
+  display: grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  padding: 10px;
+  border: 1px solid #85b399;
+  border-radius: 50%;
+  background: #10291fe8;
+  color: #c6e7d4;
+  cursor: pointer;
+  pointer-events: auto;
+  touch-action: manipulation;
+  transition: background 180ms, transform 180ms;
+}
+.round-comic-entrance:hover { background: #1b3d2b; }
+.round-comic-entrance:active { transform: translateY(1px); }
+.round-comic-entrance:focus-visible { outline: 2px solid #d5ee72; outline-offset: 3px; }
+.round-comic-entrance:disabled { cursor: default; opacity: .55; }
+.round-comic-entrance[data-opening='true'] { animation: round-comic-pulse 1s ease-in-out infinite; }
+.round-comic-entrance svg { display: block; width: 100%; height: 100%; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+@keyframes round-comic-pulse { 50% { opacity: .45; } }
+
+/* 阅读视图：整屏分镜 + 底部进度点与图形导航。 */
+.round-comic-reading { position: absolute; inset: 0; pointer-events: none; }
+.round-comic-scene { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+
+.round-comic-dots {
+  position: absolute;
+  top: 294px;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  gap: 9px;
+}
+.round-comic-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #4d6b58;
+}
+.round-comic-dot[data-current='true'] { background: #d5ee72; }
+
+.round-comic-nav {
+  position: absolute;
+  top: 318px;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+}
+.round-comic-nav-button {
+  appearance: none;
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  padding: 11px;
+  border: 1px solid #85b399;
+  border-radius: 50%;
+  background: #10291fe8;
+  color: #c6e7d4;
+  cursor: pointer;
+  pointer-events: auto;
+  touch-action: manipulation;
+  transition: background 180ms, transform 180ms;
+}
+.round-comic-nav-button:hover { background: #1b3d2b; }
+.round-comic-nav-button:active { transform: translateY(1px); }
+.round-comic-nav-button:focus-visible { outline: 2px solid #d5ee72; outline-offset: 3px; }
+.round-comic-nav-button:disabled { cursor: default; opacity: .4; }
+.round-comic-nav-button svg { display: block; width: 100%; height: 100%; fill: none; stroke: currentColor; stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round; }
+.round-comic-exit { border-color: #a4b8a0; }

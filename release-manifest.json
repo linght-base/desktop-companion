@@ -1,0 +1,635 @@
+{
+  "revision": "ec8d2545f5a89533b737edd719745ec35c1f65e9",
+  "files": [
+    {
+      "path": ".gitignore",
+      "bytes": 175,
+      "sha256": "c8e38182ae251fdf58021a70f7a44930b45a59fa89e527f7752128bed9049371"
+    },
+    {
+      "path": ".watcherignore",
+      "bytes": 131,
+      "sha256": "fa3550862249e8b63c501a02967334329a68b2f6f9456cf24e885b9ea1366d34"
+    },
+    {
+      "path": "COPYRIGHT.md",
+      "bytes": 506,
+      "sha256": "fafbc648f60ffd3f0630a06d91a0021d184efca9fb57fe9110ae767569071313"
+    },
+    {
+      "path": "INSTALL.md",
+      "bytes": 2549,
+      "sha256": "a9fffecc9e2c1e0f5853cf53c3bf42ef272d1af2ff6ae34b1a8962d047569918"
+    },
+    {
+      "path": "LICENSE",
+      "bytes": 11358,
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    {
+      "path": "README.md",
+      "bytes": 3161,
+      "sha256": "e603a1e2555fa0b623d00d3196a809b8dff25d5145c73d2a457b630208d6f076"
+    },
+    {
+      "path": "THIRD_PARTY_NOTICES.md",
+      "bytes": 1336,
+      "sha256": "5b01a1c00e4058139dc410aa056fd19a0f41250a3d4032914b1c8af0e20b67f7"
+    },
+    {
+      "path": "app.json",
+      "bytes": 445,
+      "sha256": "1689a81bbef1465afdc64203eaebc6f74886e48867458b1c229965905b6f666f"
+    },
+    {
+      "path": "app.py",
+      "bytes": 232,
+      "sha256": "0a287c6fa0b8f504005f29bf188901cd0b2ff5aa4cec3ee814a333061fc2ea70"
+    },
+    {
+      "path": "apps/companion-sim/config/competition.md",
+      "bytes": 16450,
+      "sha256": "36a55c73d1dc081c348ff736933a658a354d6275af8d87435e80269834fb9165"
+    },
+    {
+      "path": "apps/companion-sim/config/moment-comic.md",
+      "bytes": 4030,
+      "sha256": "04c22701f0a295883bc73e50ea90a33427861a5afca5f19bdbb743d21ff236eb"
+    },
+    {
+      "path": "apps/companion-sim/config/persona.md",
+      "bytes": 2047,
+      "sha256": "edcc1268fe8051ad8bff5c0ef2e4034e7712b90e8d7d0385ebd0bbbc3bff713e"
+    },
+    {
+      "path": "apps/companion-sim/package-lock.json",
+      "bytes": 43324,
+      "sha256": "0d915175691681e4277ef1e898b7be766f6bf940f0e4e92c362f6290054b23b1"
+    },
+    {
+      "path": "apps/companion-sim/package.json",
+      "bytes": 403,
+      "sha256": "4f8dddaf00380f4193a6f4b0fdd6557d0956a6089bb4cc71d8db668119af7c5a"
+    },
+    {
+      "path": "apps/companion-sim/src/action-arbiter.mjs",
+      "bytes": 8237,
+      "sha256": "b2d0c63639fdf5665fb5c54353b1a03f5116c52cb0645cae8d3f318c24137666"
+    },
+    {
+      "path": "apps/companion-sim/src/activity-journal.mjs",
+      "bytes": 13240,
+      "sha256": "8cb2d158ea5a51aebfbe8beeee43d57059d8e91e6c766230d7aea5e27e79c79c"
+    },
+    {
+      "path": "apps/companion-sim/src/agent.mjs",
+      "bytes": 57233,
+      "sha256": "5d533f35f07df38c5994ad5af5ef54ce903e28d78fa81bdfacb6cb81fc9a8987"
+    },
+    {
+      "path": "apps/companion-sim/src/attention.mjs",
+      "bytes": 8854,
+      "sha256": "707c672590cb1e39be207e62cd38dfba0a851c3acc65f8b03805940ffbe852b7"
+    },
+    {
+      "path": "apps/companion-sim/src/autonomy/host-adapter.mjs",
+      "bytes": 10295,
+      "sha256": "1af5cab4b3470ddf90897a8ffbc13d66762bf53f021b4836994af0eb26110d00"
+    },
+    {
+      "path": "apps/companion-sim/src/autonomy/index.mjs",
+      "bytes": 34087,
+      "sha256": "29433f8a776fba665ada83da5dd1901480f09632dc30e21f79cb54a22a59cc11"
+    },
+    {
+      "path": "apps/companion-sim/src/behavior-methods.mjs",
+      "bytes": 18579,
+      "sha256": "e4fb5e2c66b71b11a9c27e6b4c867abe705c800f80aa28c96b7bea12f00b9862"
+    },
+    {
+      "path": "apps/companion-sim/src/body.mjs",
+      "bytes": 8534,
+      "sha256": "99e6b59d13cbba91413d21d9c545a11d04b1c2ae1c3a3c080febd5603fe1274b"
+    },
+    {
+      "path": "apps/companion-sim/src/capability-registry.mjs",
+      "bytes": 6441,
+      "sha256": "415c8568304332e27a5a99d3b95462f530a3a7f381c150a69f3c3273e4ccc7e4"
+    },
+    {
+      "path": "apps/companion-sim/src/cognition.mjs",
+      "bytes": 10661,
+      "sha256": "13a0616ea5872be13de825193dc436da5e63f7c7f7631731dc1312ef89796119"
+    },
+    {
+      "path": "apps/companion-sim/src/comic-characters.mjs",
+      "bytes": 5024,
+      "sha256": "85a1ddad981b2a3428a0ccb507271b2959ddba086252f3d4f16e7392fc620263"
+    },
+    {
+      "path": "apps/companion-sim/src/comic-image-provider.mjs",
+      "bytes": 13052,
+      "sha256": "173b5f63c9dfdbea14360fb721cf2f2aba247c811a6fc62d04a3a3089b1de8d7"
+    },
+    {
+      "path": "apps/companion-sim/src/comic-renderer.mjs",
+      "bytes": 7005,
+      "sha256": "23966012d67147c7d0890f604eb4e46bf1ee3484776c1f6b5ffc1f8db3e2a05d"
+    },
+    {
+      "path": "apps/companion-sim/src/comic-store.mjs",
+      "bytes": 23086,
+      "sha256": "9f1aa91b48b47d9027457b8e81d752958862f936314d60cd7a7e32a4f60658dc"
+    },
+    {
+      "path": "apps/companion-sim/src/context-pack.mjs",
+      "bytes": 7134,
+      "sha256": "e1ea0b7cbd68d6ddc7fde3b6bd68fa06a27d716c744f67c440365f2fb0172a4f"
+    },
+    {
+      "path": "apps/companion-sim/src/continuity-store.mjs",
+      "bytes": 43602,
+      "sha256": "d9675200af208d891070535e42a5db135ddff08b0408aa6dbeda68a4d43a6299"
+    },
+    {
+      "path": "apps/companion-sim/src/contracts.d.ts",
+      "bytes": 4313,
+      "sha256": "3cd51d961961248508d15a5c51ae21bb5c1c7f3a2eff53d7191af012d96ac26b"
+    },
+    {
+      "path": "apps/companion-sim/src/contracts.mjs",
+      "bytes": 8152,
+      "sha256": "08270ded632b2c22c0a4d2d6b6bec89a53aae76f39df56f7efd7ba1630747fc7"
+    },
+    {
+      "path": "apps/companion-sim/src/controller.mjs",
+      "bytes": 117967,
+      "sha256": "22a94b7653b34382b026f83abd256b0e3f85562191bd4bdcecf6988f41f573f2"
+    },
+    {
+      "path": "apps/companion-sim/src/day-window.mjs",
+      "bytes": 3686,
+      "sha256": "b4bc27b974f9bce2089e155168107b1609e31420e59ee4a46c958b8d46b5fe73"
+    },
+    {
+      "path": "apps/companion-sim/src/device-bridge.mjs",
+      "bytes": 14449,
+      "sha256": "50ec41b7e126d1e75dda82c8e22bdfe8a372d19062d35872a8fbb71168c78be5"
+    },
+    {
+      "path": "apps/companion-sim/src/device-liveness.mjs",
+      "bytes": 3199,
+      "sha256": "3d2fa17b3933a62627b2ed67a496da6454fe024c9e063c5996d5722fb2cb3ce0"
+    },
+    {
+      "path": "apps/companion-sim/src/device-output.mjs",
+      "bytes": 17903,
+      "sha256": "94c501387bbbd2e89ae3cf76292df793a2ef962e4122b397be2831c79455828c"
+    },
+    {
+      "path": "apps/companion-sim/src/device-pairing.mjs",
+      "bytes": 3008,
+      "sha256": "0429eb0d77d42b8a7156ea5fd9796f2e62efbc62bce31966755b7a95253313c4"
+    },
+    {
+      "path": "apps/companion-sim/src/expression-demands.mjs",
+      "bytes": 32553,
+      "sha256": "153012ebd199f91a1a3e140edc7e83d1e1b13b0ab21a16e862be3d11ff238de8"
+    },
+    {
+      "path": "apps/companion-sim/src/expression-library/evidence.mjs",
+      "bytes": 4157,
+      "sha256": "465eed1cefcf86863b53c8c7f23bc7af0dbfeb94039d38f0ef6a322cb1909e19"
+    },
+    {
+      "path": "apps/companion-sim/src/expression-library/index.mjs",
+      "bytes": 24871,
+      "sha256": "19fc862a22f275a8ccec271534c488a196e660267606d1dbd55323ac53a59b00"
+    },
+    {
+      "path": "apps/companion-sim/src/expression-library/playback.mjs",
+      "bytes": 10776,
+      "sha256": "c0cb161daa8638e29c3b2421bf50cd19c087233090f328087ddbdb95df82cdff"
+    },
+    {
+      "path": "apps/companion-sim/src/expression-library/recipe.mjs",
+      "bytes": 9739,
+      "sha256": "fd1e34db67b5549b2728fb6f8cb21a288e7071f62985a42af88bfd95b9812aa1"
+    },
+    {
+      "path": "apps/companion-sim/src/expression-library/types.d.ts",
+      "bytes": 6077,
+      "sha256": "19343f0567c30a9b0cb57617a0607f5c441c15843dc03116d3aca6c3420c8bde"
+    },
+    {
+      "path": "apps/companion-sim/src/inference-cadence.mjs",
+      "bytes": 6581,
+      "sha256": "549fe8c8fdd0e89c89f12062f7e39da0e7e68f761c2817fa7d5395cea93a23b2"
+    },
+    {
+      "path": "apps/companion-sim/src/intent-ledger.mjs",
+      "bytes": 15302,
+      "sha256": "932047092bffd186c9d3d95173ab7e5107837a43ce4f327474bbe52333b63a9b"
+    },
+    {
+      "path": "apps/companion-sim/src/memory-retrieval.mjs",
+      "bytes": 9375,
+      "sha256": "66546c9c8cee573b248ff7d8e6bb9b8b42dd575a9d7af81ea5f9c2998de297cd"
+    },
+    {
+      "path": "apps/companion-sim/src/model-settings-host.mjs",
+      "bytes": 1337,
+      "sha256": "1450d10d9c82dfc65f953e6c65fceff6e4aaafe0e2a381d432220e0c3874b346"
+    },
+    {
+      "path": "apps/companion-sim/src/model-settings.mjs",
+      "bytes": 5320,
+      "sha256": "c23ffd19d19bba56f2cb3808ee5deaca64153ca0a44685cf767e68cd32ecaad8"
+    },
+    {
+      "path": "apps/companion-sim/src/moment-comic-host.mjs",
+      "bytes": 7688,
+      "sha256": "c77b931b5586556d882ceaaa4dbc4e155ee5d64903a778c362e37f4b0178ece3"
+    },
+    {
+      "path": "apps/companion-sim/src/moment-comics.mjs",
+      "bytes": 26520,
+      "sha256": "9f883680ed26b3d81b9f1507d14daa1eacc391d2aa7d6041554b6630712ddab6"
+    },
+    {
+      "path": "apps/companion-sim/src/observation-history.mjs",
+      "bytes": 10711,
+      "sha256": "677244b76975076d17ceb9af3e37fa53645769dfd7135d4aa495ffb2ac4fd9b6"
+    },
+    {
+      "path": "apps/companion-sim/src/peripheral-glance.mjs",
+      "bytes": 3845,
+      "sha256": "acaa6acdeff9601be5af2d704e21650bf19b61f0d7ba6008eb562a7daaf5cfdc"
+    },
+    {
+      "path": "apps/companion-sim/src/person-orientation.mjs",
+      "bytes": 6545,
+      "sha256": "07169e8dc26daab3978f5f22ac1d6a89fd3de3b9cfdf25cceb059e737384f8da"
+    },
+    {
+      "path": "apps/companion-sim/src/persona-registry.mjs",
+      "bytes": 7235,
+      "sha256": "9b23d6fbab81f525ef69a8b1d4127833b279954044a17335c1d9251aad967158"
+    },
+    {
+      "path": "apps/companion-sim/src/pi-context-store.mjs",
+      "bytes": 1207,
+      "sha256": "8def2f6e9d488121680fa9d487367e38748405055dfb7c2013436edd6496193f"
+    },
+    {
+      "path": "apps/companion-sim/src/pi-continuity.mjs",
+      "bytes": 13223,
+      "sha256": "882713fb9a22f08f8d4c27006802e48ee569d08b36b534c10907153880e5cb9a"
+    },
+    {
+      "path": "apps/companion-sim/src/presence-rest.mjs",
+      "bytes": 7481,
+      "sha256": "c8d08a5be40cab87e6058bf0d51a64e92e4dfb038a52dd664b1ee0169a1c810f"
+    },
+    {
+      "path": "apps/companion-sim/src/provider-availability.mjs",
+      "bytes": 4302,
+      "sha256": "b87fc84765026b21d457284129eead9d4b3b2596ef31d72de4504dc3fd5ebf6a"
+    },
+    {
+      "path": "apps/companion-sim/src/provider-failure.mjs",
+      "bytes": 4993,
+      "sha256": "8345b1a50f12add4db5d6aecf87d6cdbf9763482029cd7d34ab2647fee9aa926"
+    },
+    {
+      "path": "apps/companion-sim/src/provider.mjs",
+      "bytes": 8277,
+      "sha256": "c8ab068ef3222c1d94b46df251a9389a5c6613e33ef7ffd9a5c544237c4bd3d2"
+    },
+    {
+      "path": "apps/companion-sim/src/reconnectable-device-bridge.mjs",
+      "bytes": 1667,
+      "sha256": "fe8bdac37a03440059843af75e2cd4f8d2bcd8a4b5ab1f0fcf05658b8a133adf"
+    },
+    {
+      "path": "apps/companion-sim/src/reminders.mjs",
+      "bytes": 28838,
+      "sha256": "2ca88a2d405c419fcb03d9c8ccef3b96c36f0fa852ab0f20ce68788843c98200"
+    },
+    {
+      "path": "apps/companion-sim/src/rig.mjs",
+      "bytes": 9240,
+      "sha256": "1196cec92f881c2c845f40cc60414109b34f5729690ed15696c3ccb1a03655db"
+    },
+    {
+      "path": "apps/companion-sim/src/robot-video-ingress.mjs",
+      "bytes": 9782,
+      "sha256": "2014505634db58121ecb344accf497e24658dad53e73a27769f656025490347a"
+    },
+    {
+      "path": "apps/companion-sim/src/server.mjs",
+      "bytes": 31631,
+      "sha256": "bb18f87f8bfd4b72be9259798b61b1088327813ee9769bc74abb323d19e0453e"
+    },
+    {
+      "path": "apps/companion-sim/src/state-projection.mjs",
+      "bytes": 657,
+      "sha256": "101a2a5a9c1f45c8de15733e4ad9047584b5530546d0629104af80c708a2df1b"
+    },
+    {
+      "path": "apps/companion-sim/src/state-stream.mjs",
+      "bytes": 3889,
+      "sha256": "0287f3769fbe7f27ac3638c051b9bc10ce5df582d834463c17be6295f90a676f"
+    },
+    {
+      "path": "apps/companion-sim/src/store.mjs",
+      "bytes": 14235,
+      "sha256": "68a802916b34a72b3c21860d434d0634aacdb9d858f6620f84250fafb2ed151a"
+    },
+    {
+      "path": "apps/companion-sim/src/subject-runtime/event-queue.mjs",
+      "bytes": 17158,
+      "sha256": "5a9ccf2d558b93426f5fda4cce9f2f3525244a48fc58754099bd8157a6232459"
+    },
+    {
+      "path": "apps/companion-sim/src/subject-runtime/index.mjs",
+      "bytes": 211,
+      "sha256": "5e3c6db32439ca12426e39a1ba15e559c08ec3d5dbaa70a8246b5e29dd280782"
+    },
+    {
+      "path": "apps/companion-sim/src/subject-runtime/plan-host.mjs",
+      "bytes": 6958,
+      "sha256": "a8d1527c2cb0acb7382ae3b5aa74d9507a378bf6562844d5efe6731ee09746cf"
+    },
+    {
+      "path": "apps/companion-sim/src/video-ingress.mjs",
+      "bytes": 12993,
+      "sha256": "1707c100fd1a592708a3afbed01c62bc25ea1def2d56c5c9c854c085eddbcc89"
+    },
+    {
+      "path": "apps/companion-sim/src/view-guidance.mjs",
+      "bytes": 6262,
+      "sha256": "d2f4b3b61a4827afea7a691eef4090968ca98017981d568741b722373baee8da"
+    },
+    {
+      "path": "apps/companion-sim/src/visual-exchange.mjs",
+      "bytes": 2344,
+      "sha256": "63cc972f2fc8b60db1119384345d3ac3ea5003781556ebed805381ef8eb6c0b3"
+    },
+    {
+      "path": "apps/companion-sim/web/agent-inspector.js",
+      "bytes": 3401,
+      "sha256": "1843baa6427ac21d03a5c537f1dbc8143b0d89685f666de4f1467d5d94df0a22"
+    },
+    {
+      "path": "apps/companion-sim/web/app.js",
+      "bytes": 50352,
+      "sha256": "2fd1bbfa73df11fdc7d33ec451bbcff0ab2d894065640c265dc93ca6e95f9dd7"
+    },
+    {
+      "path": "apps/companion-sim/web/body-presentation.js",
+      "bytes": 3975,
+      "sha256": "0f7e4aa67ac258c5b2f7eebbd4783ef51a7c489f9c43d2f205ec86b1c87198b4"
+    },
+    {
+      "path": "apps/companion-sim/web/camera.js",
+      "bytes": 7615,
+      "sha256": "13f525a93e25d0e65cac36e3517424d70085f30a8f3132630300c1893a86811e"
+    },
+    {
+      "path": "apps/companion-sim/web/cognitive-icons.js",
+      "bytes": 1240,
+      "sha256": "8e3392f921dedf70fd1d07d0eefec32d86e26614df7a6fa520b68c25f5000b1d"
+    },
+    {
+      "path": "apps/companion-sim/web/comic-ui.js",
+      "bytes": 13600,
+      "sha256": "4e40365d82aa653be2c7e377a3c4bb797467f741b004f9e306dcac41065e33e4"
+    },
+    {
+      "path": "apps/companion-sim/web/companion-ui.js",
+      "bytes": 12281,
+      "sha256": "1eab34db9b6a6981bed6cff7c83d32b8d89829bbdf34b28fc276ef2f008cbd91"
+    },
+    {
+      "path": "apps/companion-sim/web/device-camera.js",
+      "bytes": 5502,
+      "sha256": "a3ebaf1918e4f6c547f671a7b7702982e837bd3c5c15a2f18ec2c6a0b5305459"
+    },
+    {
+      "path": "apps/companion-sim/web/index.html",
+      "bytes": 34889,
+      "sha256": "1c7db1d38bdbedb00b9c6dd8ee507b78a98a6d306f2ce08f02fac1c5d6b994c6"
+    },
+    {
+      "path": "apps/companion-sim/web/interaction-feedback.js",
+      "bytes": 5979,
+      "sha256": "e266d271a46c0bd2ddae212c6838d12fb01a3ad102fa8eba24e46563c64b1677"
+    },
+    {
+      "path": "apps/companion-sim/web/introduction-cover.jpg",
+      "bytes": 156440,
+      "sha256": "a824d59748330494a06f5f6f2b535a48413c5f389d5d509b597b4ddd5ae7c187"
+    },
+    {
+      "path": "apps/companion-sim/web/introduction.mp4",
+      "bytes": 3412584,
+      "sha256": "f78945ab1ec69bd20d14cb6ef4a14ae7d1d8f190ea7d03bf0bbd71b0088e5612"
+    },
+    {
+      "path": "apps/companion-sim/web/model-settings-ui.js",
+      "bytes": 3705,
+      "sha256": "69f1f4bd5ce9bf4d301bc6e4e37f209ebb2bc913d8c08181f0901ed2c0dfdd3d"
+    },
+    {
+      "path": "apps/companion-sim/web/moment-comics-ui.js",
+      "bytes": 3708,
+      "sha256": "702e88b874d32dd10b1c24984a2df85856d7d4a2f35c2c02d4579efef4049592"
+    },
+    {
+      "path": "apps/companion-sim/web/moment-gallery.css",
+      "bytes": 2772,
+      "sha256": "27ad8c26aba99400c7008df834fc67fa52318e19d4eaef07c550d6d6564afdcd"
+    },
+    {
+      "path": "apps/companion-sim/web/moment-gallery.js",
+      "bytes": 12234,
+      "sha256": "992d9e037d834a6b0f77e8275d3958bf7a267db5eef11563ec1a324776007077"
+    },
+    {
+      "path": "apps/companion-sim/web/pet.html",
+      "bytes": 1389,
+      "sha256": "8ff930716df0c0e7a264d3651e70bc201fb6e2e7fa72b9cbdb43418bbaff05dc"
+    },
+    {
+      "path": "apps/companion-sim/web/pet.js",
+      "bytes": 2980,
+      "sha256": "d35defead38d9e8f18017a034d71a10770d866817387150e908d2d76668ed2d8"
+    },
+    {
+      "path": "apps/companion-sim/web/presentation-reporter.js",
+      "bytes": 11560,
+      "sha256": "9e45749ec69d862fff81f8a8098f600741df75b6eae70e63392f6232f958033e"
+    },
+    {
+      "path": "apps/companion-sim/web/rig-ui.js",
+      "bytes": 4583,
+      "sha256": "15ef28d0213ba49db319f78d6941f1c76e5f52b07ab480691d9aeb9df7a2a0a8"
+    },
+    {
+      "path": "apps/companion-sim/web/robot-inspector-page.js",
+      "bytes": 1876,
+      "sha256": "b95049eb1ba9a87fafbacb54f12bcb53cace5a192d4ce51a167282cf0ec137d8"
+    },
+    {
+      "path": "apps/companion-sim/web/robot.html",
+      "bytes": 3413,
+      "sha256": "85adafaf938f0fc6a58bcb43fe9d0f997b04c355fe75b56009b5d415e122f2ca"
+    },
+    {
+      "path": "apps/companion-sim/web/robot.js",
+      "bytes": 6930,
+      "sha256": "781829ac689919ced16fe0cdc94b3fe6035f50503316abf944c9043d34a2bef6"
+    },
+    {
+      "path": "apps/companion-sim/web/round-comic-reader.css",
+      "bytes": 3204,
+      "sha256": "06184c6863c66d0dcfe60314357449ec1f55a43aed50cd22480fbd7c4ef00ae7"
+    },
+    {
+      "path": "apps/companion-sim/web/round-comic-reader.js",
+      "bytes": 13886,
+      "sha256": "2c24b16ef7d2a205f21c2bcc5fa812081e914154a96ae1014580d1aa1d2c42ba"
+    },
+    {
+      "path": "apps/companion-sim/web/round-screen-input.css",
+      "bytes": 1621,
+      "sha256": "793f2b5ffe3294e5ffc4208e978e4af07e27b6b21b71b9b3817b5c69b89b0a93"
+    },
+    {
+      "path": "apps/companion-sim/web/round-screen-input.js",
+      "bytes": 8633,
+      "sha256": "d8d2b7c92ead9547f07ac47589f44eb8d8d241f5c083fe0417715990be577844"
+    },
+    {
+      "path": "apps/companion-sim/web/styles.css",
+      "bytes": 40077,
+      "sha256": "9332de5d85a80e20a899b57169cbe7052b96978b467e54d224bb451627340bc5"
+    },
+    {
+      "path": "apps/companion-sim/web/subject-ui.js",
+      "bytes": 4411,
+      "sha256": "dd780a9de4183741136b1af1e8bee189f0bc03450dc34f321f1c1fd1b336f48e"
+    },
+    {
+      "path": "apps/companion-sim/web/tokens.css",
+      "bytes": 1397,
+      "sha256": "967110ad1070d9b7930c6e177764d2eefdb0d21f02927b201b1962f83289526d"
+    },
+    {
+      "path": "apps/companion-sim/web/user-feedback.js",
+      "bytes": 7569,
+      "sha256": "bb4140c64a53b2db6910624d86ebf3a462df17664008b4d590f1f01e58b5688e"
+    },
+    {
+      "path": "apps/companion-sim/web/video-stream.js",
+      "bytes": 6663,
+      "sha256": "27a01468d8b268239d991fce3da5d0453e9c918af7f87fbd26efc6192949b4f0"
+    },
+    {
+      "path": "apps/companion-sim/web/view-guidance.css",
+      "bytes": 796,
+      "sha256": "ef844c6e7775a11902fe70dc355a33f12e4dc52f1a57806c9622485db505f8d3"
+    },
+    {
+      "path": "apps/companion-sim/web/view-guidance.js",
+      "bytes": 3973,
+      "sha256": "78afd89c9011f11bce1461bb2d2ecd7257f5aa19e84b135a387dc61692fc9b83"
+    },
+    {
+      "path": "config/integration/companion-sight-LICENSE.txt",
+      "bytes": 1085,
+      "sha256": "c83b8120c50ccbd4c4f96edf53141bdd566ebb8f8e9227e415326aa1b1aba958"
+    },
+    {
+      "path": "config/integration/companion-sight-model.json",
+      "bytes": 482,
+      "sha256": "7275ea2b3c185878f1e6c42a954234b96455d958d49e96f8b7dc29dc7a724c8d"
+    },
+    {
+      "path": "config/integration/companion-webrtc.requirements.txt",
+      "bytes": 231,
+      "sha256": "44ba75a8cdf052b7b089242feea7e346dd0ba2c9e0fa12098d7ae0ad03eec793"
+    },
+    {
+      "path": "host.mjs",
+      "bytes": 1743,
+      "sha256": "49d0bb782264e7aee43bfcb11583c50d1fed38a3282727bf2316891950272dd1"
+    },
+    {
+      "path": "icon.svg",
+      "bytes": 678,
+      "sha256": "6f10ae009cd6a3ac59cbed01ac6b7e5552a99641f3935a91cd8f47928ada2245"
+    },
+    {
+      "path": "launcher.py",
+      "bytes": 6621,
+      "sha256": "327fd8b2338b7da9ee90d9b06cb863e41593180807a8a0235a09fdad90b785d7"
+    },
+    {
+      "path": "managed_device.py",
+      "bytes": 945,
+      "sha256": "92a74fbb4f95a14098f4eb12b72cada64a0445e69f2f186c6bafecda0f2a1d01"
+    },
+    {
+      "path": "prepare.py",
+      "bytes": 6023,
+      "sha256": "4b9613660dc196ce9b890f6e89e79b31a942901258f2eb4a4a49c4a1f3643fd0"
+    },
+    {
+      "path": "scripts/companion_cognition.py",
+      "bytes": 2896,
+      "sha256": "57e89cb06db4692327ef2d5463d1c55f5ee9a766885dd19c5394b7ac3d1dbb87"
+    },
+    {
+      "path": "scripts/companion_device.py",
+      "bytes": 49634,
+      "sha256": "0a2980611c703f03c40baa16899d3108d6b92d9c8c1aef094488c3f0c31a3690"
+    },
+    {
+      "path": "scripts/companion_feedback.py",
+      "bytes": 12333,
+      "sha256": "e9c27ae503cbda4b3788a19991b75eb4397f2d0ce6b7c228c31ec7bf4c306629"
+    },
+    {
+      "path": "scripts/companion_message.py",
+      "bytes": 10858,
+      "sha256": "de372baaeccaf71aa17f99aa6828fb87a43bbdff6606ca615d372dd959ff2a45"
+    },
+    {
+      "path": "scripts/companion_robot_webrtc.py",
+      "bytes": 6096,
+      "sha256": "321ae988b977d7daf5d249401158696a62cf1cf4014d8fc0ecc6267de2e548cb"
+    },
+    {
+      "path": "scripts/companion_sight.py",
+      "bytes": 12303,
+      "sha256": "c2c3288d6e09d8ed83eca3aa58761731c27888922c19f074ab8e11e86d15759e"
+    },
+    {
+      "path": "scripts/companion_vector_budget.py",
+      "bytes": 2015,
+      "sha256": "6fd618fb63e569c713ca42a42b81322b86ebbe5e88798b6f9e1548471b187b79"
+    },
+    {
+      "path": "scripts/companion_webrtc.py",
+      "bytes": 9387,
+      "sha256": "9e62c9bcc0575f0f59e03d49ee09c925ec735eb0e3156150003f4ba315de759b"
+    },
+    {
+      "path": "scripts/setup-companion-sight.py",
+      "bytes": 1015,
+      "sha256": "9b7446752cdbda22b834954ca55aeef0ce7ae7fa22c267345e63d57808ad402f"
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+<!-- Copyright (c) 2026 Shenzhen Guangbo Technology Co., Ltd. -->
+<!-- SPDX-License-Identifier: Apache-2.0 -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-label="桌面伙伴">
+  <rect width="256" height="256" rx="58" fill="#f5f5ef"/>
+  <path d="M87 211h82l-9-27H96z" fill="#b7caa6"/>
+  <circle cx="128" cy="112" r="88" fill="#c1ed8d"/>
+  <circle cx="128" cy="112" r="77" fill="#233c32"/>
+  <rect x="79" y="82" width="29" height="52" rx="14.5" fill="#c1ed8d"/>
+  <rect x="148" y="82" width="29" height="52" rx="14.5" fill="#c1ed8d"/>
+  <path d="M111 156q17 12 34 0" fill="none" stroke="#c1ed8d" stroke-width="7" stroke-linecap="round"/>
+</svg>

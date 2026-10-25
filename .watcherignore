@@ -1,0 +1,12 @@
+.runtime/
+node_modules/
+**/node_modules/
+__pycache__/
+**/__pycache__/
+.env
+.env.*
+*.log
+*.sqlite
+*.sqlite3
+*.db
+release-check.json
