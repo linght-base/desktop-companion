@@ -1,5 +1,5 @@
 {
-  "revision": "599223823fe51d2a913ae4b1dd44e123daa8adff",
+  "revision": "159cec70a96c928e39cf81154804786e0b7a9840",
   "files": [
     {
       "path": ".gitignore",
@@ -28,8 +28,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 16192,
-      "sha256": "aaa49e8510875d685b776fa1d098b13db8fa36dd265f5e2378481b7027cc4431"
+      "bytes": 16893,
+      "sha256": "84bfc35d08589196a5f3ae3d0ae6614dcbef245eacafcbcfbf9e836f9d6104d8"
     },
     {
       "path": "THIRD_PARTY_NOTICES.md",
@@ -587,6 +587,11 @@
       "sha256": "4b9613660dc196ce9b890f6e89e79b31a942901258f2eb4a4a49c4a1f3643fd0"
     },
     {
+      "path": "readme-assets/companionship.png",
+      "bytes": 42299,
+      "sha256": "622d4d8c56f10c2eda335a94147af15d0acf9fc307de7423e6fcaef2057ca5e6"
+    },
+    {
       "path": "readme-assets/console.png",
       "bytes": 48461,
       "sha256": "b96d52dff9c86539007e602663ed9a407300a4552c1d4ae5b137851d8ce044b1"
@@ -595,6 +600,16 @@
       "path": "readme-assets/cover.jpg",
       "bytes": 156440,
       "sha256": "a824d59748330494a06f5f6f2b535a48413c5f389d5d509b597b4ddd5ae7c187"
+    },
+    {
+      "path": "readme-assets/memory.png",
+      "bytes": 34850,
+      "sha256": "81b35bbabd2de20f2bc9df042f8b9ea1a34f343089b0c2e4d27029bd491e8d69"
+    },
+    {
+      "path": "readme-assets/records.png",
+      "bytes": 53799,
+      "sha256": "ac8ff254480c1aa49db69424c0296752b5d3add9ba224033fd90dabee497cf38"
     },
     {
       "path": "readme-assets/robot-on-desk.jpg",
