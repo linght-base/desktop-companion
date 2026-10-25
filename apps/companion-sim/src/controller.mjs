@@ -38,7 +38,7 @@ class Controller extends EventEmitter {
     this.capabilityRegistry=capabilityRegistry;this.actionArbiter=actionArbiter;this.bodyLeases=new Map();
     this.personaVersion=createHash('sha256').update(String(persona)).digest().readUInt32BE(0)%1_000_000_000+1;
     this.enabled=false;this.phase='stopped';this.epoch=0;this.revision=0;this.events=[];this.error=null;
-    this.experienceProfile=experienceProfile;this.visualExchange=createVisualExchange({clock});this.pendingThoughts=[];this.preparedReply=null;this.currentInteraction=null;this.userFeedback=null;this.userFeedbackAuthority=null;this.userFeedbackHistory=[];this.semanticThoughtPresence=new Map();this.deviceStatus=deviceStatus;this.lastPresencePublishedAt=0;
+    this.experienceProfile=experienceProfile;this.visualExchange=createVisualExchange({clock});this.pendingThoughts=[];this.preparedReply=null;this.currentInteraction=null;this.userFeedback=null;this.userFeedbackAuthority=null;this.userFeedbackHistory=[];this.feedbackHistoryDesk=null;this.semanticThoughtPresence=new Map();this.deviceStatus=deviceStatus;this.lastPresencePublishedAt=0;
     this.providerAvailability=providerAvailability??createProviderAvailability({clock});
     this.observationHistory=observationHistory??createObservationHistory({clock});
     this.observationHistory.reset({epoch:this.epoch,deskId:this.profile().deskId});
@@ -455,14 +455,21 @@ class Controller extends EventEmitter {
     return Number.isFinite(age)&&age>=-1000&&age<=2000;
   }
   userFeedbackSnapshot(){
-    this.userFeedbackHistory=this.userFeedbackHistory.filter(item=>item.epoch===this.epoch&&item.deskId===this.profile().deskId&&this.thoughtSourcesCurrent(item));
+    const deskId=this.profile().deskId;
+    if(this.feedbackHistoryDesk!==deskId){this.userFeedbackHistory=(this.continuity?.listFeedback?.({deskId,limit:50})??[]).reverse();this.feedbackHistoryDesk=deskId;}
+    this.userFeedbackHistory=this.userFeedbackHistory.filter(item=>item.deskId===deskId&&this.thoughtSourcesCurrent(item));
     for(const item of this.userFeedbackHistory)if(item.status==='requested'&&item.expiresAt<=this.clock())item.status='expired';
     const feedback=this.userFeedback,authority=this.userFeedbackAuthority;
     if(feedback&&(!this.enabled||this.closed||feedback.epoch!==this.epoch||feedback.deskId!==this.profile().deskId||feedback.expiresAt<=this.clock()||!this.thoughtSourcesCurrent(feedback)||!authority||!this.thoughtVisible(authority))){
-      const historical=this.userFeedbackHistory.find(item=>item.id===feedback.id);if(historical&&historical.status==='requested')historical.status=feedback.expiresAt<=this.clock()?'expired':'retracted';
+      const historical=this.userFeedbackHistory.find(item=>item.id===feedback.id);if(historical&&historical.status==='requested')historical.status=feedback.expiresAt<=this.clock()?'expired':'ended';
       this.userFeedback=null;this.userFeedbackAuthority=null;
     }
     return this.userFeedback?structuredClone(this.userFeedback):null;
+  }
+  rememberFeedback(feedback){
+    this.continuity?.recordFeedback?.(feedback);
+    this.userFeedbackHistory=this.userFeedbackHistory.filter(item=>item.id!==feedback.id);
+    this.userFeedbackHistory.push({...structuredClone(feedback),status:'requested'});this.userFeedbackHistory=this.userFeedbackHistory.slice(-50);
   }
   async recordPerception(candidate){
     const token=this.token;const rejected=this.historicalAuthority(candidate);if(rejected)return rejected;
@@ -501,7 +508,7 @@ class Controller extends EventEmitter {
     this.preparedReply=null;
     const now=this.clock(),shown={...feedback,createdAt:now,expiresAt:Math.min(now+3500,validUntil),facingAtRequest:this.visualExchange.snapshot().facing==='toward'?'toward_proxy':'face_visible'};
     if(shown.expiresAt-now<3000)return false;
-    this.userFeedback=shown;this.userFeedbackAuthority=authority;this.userFeedbackHistory.push({...structuredClone(shown),status:'requested'});this.userFeedbackHistory=this.userFeedbackHistory.slice(-5);
+    this.rememberFeedback(shown);this.userFeedback=shown;this.userFeedbackAuthority=authority;
     this.record('user_feedback_requested',{id:shown.id,message:shown.message,inference:shown.inference,evidenceRefs:shown.evidenceRefs,presentationStatus:'requested',delivery:'pi_prepared_visual_opening',userAttention:'unknown'});this.publish();return true;
   }
   async shareThought(request){
@@ -570,7 +577,7 @@ class Controller extends EventEmitter {
       const hypothesis=this.continuity.rememberBelief({summary:feedback.inference+(feedback.uncertainty?`\n不确定：${feedback.uncertainty}`:''),evidenceIds:refs.map(ref=>ref.id),kind:'hypothesis'});
       if(request.pendingThoughtId)this.pendingThoughts=this.pendingThoughts.filter(item=>item.id!==request.pendingThoughtId);
       feedback.facingAtRequest=this.visualExchange.snapshot().facing==='toward'?'toward_proxy':this.visualExchange.snapshot().active?'face_visible':'unknown';
-      this.userFeedback=feedback;this.userFeedbackAuthority=authority;this.userFeedbackHistory.push({...structuredClone(feedback),status:'requested'});this.userFeedbackHistory=this.userFeedbackHistory.slice(-5);
+      this.rememberFeedback(feedback);this.userFeedback=feedback;this.userFeedbackAuthority=authority;
       this.record('user_feedback_requested',{id:feedback.id,message:feedback.message,inference:feedback.inference,uncertainty:feedback.uncertainty??null,evidenceRefs:refs,hypothesisId:hypothesis.id,presentationStatus:'requested',userAttention:'unknown',userCompletion:'unknown'});
       this.publish();return {accepted:true,status:'accepted',presentationStatus:'requested',hypothesisId:hypothesis.id,userFeedback:structuredClone(feedback)};
     }catch{return this.rejected('invalid_thought_request');}
@@ -806,7 +813,7 @@ class Controller extends EventEmitter {
     if(!['start','pause','resume','stop','quiet'].includes(action))throw new Error('invalid_action');
     this.epoch++;this.presenceRest?.reset();this.wasPresenceResting=false;this.semanticPersonUntil=0;this.semanticPersonStream=null;this.observationHistory.reset({epoch:this.epoch,deskId:this.profile().deskId});this.settleToken(this.token);this.clearInbox();clearTimeout(this.retryTimer);this.retryTimer=null;
     this.autonomy?.cancel({epoch:this.epoch,reason:action});this.actionArbiter?.cancel({epoch:Math.max(0,this.epoch-1),reason:action});this.bodyLeases.clear();this.lastInvitation=null;
-    this.visualExchange.reset();this.pendingThoughts=[];this.preparedReply=null;this.inputFeedbackUntil=0;this.expressionBasis=null;this.currentInteraction=null;this.userFeedback=null;this.userFeedbackAuthority=null;this.userFeedbackHistory=[];this.semanticThoughtPresence.clear();
+    this.visualExchange.reset();this.pendingThoughts=[];this.preparedReply=null;this.inputFeedbackUntil=0;this.expressionBasis=null;this.currentInteraction=null;this.userFeedback=null;this.userFeedbackAuthority=null;this.semanticThoughtPresence.clear();
     this.inferenceCadence?.reset({epoch:this.epoch,deskId:this.profile().deskId,reason:action});this.cadenceBasis=null;this.cadenceFingerprint=null;
     if(this.methodSession)this.behaviorMethods?.stopSession(this.methodSession);this.methodSession=null;
     this.viewGuidance?.stop(action);

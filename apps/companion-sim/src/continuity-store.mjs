@@ -125,6 +125,8 @@ export function createContinuityStore({ path, clock = Date.now }) {
       CREATE TABLE IF NOT EXISTS continuity_episode_requests (desk_id TEXT NOT NULL, request_id TEXT NOT NULL,
         content_hash TEXT NOT NULL, episode_id TEXT NOT NULL, created_at INTEGER NOT NULL, PRIMARY KEY(desk_id,request_id));
       CREATE VIRTUAL TABLE IF NOT EXISTS continuity_search USING fts5(id UNINDEXED, terms, tokenize='unicode61');`);
+    db.exec(`CREATE TABLE IF NOT EXISTS continuity_feedback(id TEXT PRIMARY KEY,desk_id TEXT NOT NULL,created_at INTEGER NOT NULL,payload TEXT NOT NULL);
+      CREATE INDEX IF NOT EXISTS continuity_feedback_scope_time ON continuity_feedback(desk_id,created_at)`);
     db.exec(`CREATE INDEX IF NOT EXISTS continuity_perception_scope_basis ON continuity_perception_events(json_extract(payload,'$.deskId'),json_extract(payload,'$.source'),json_extract(payload,'$.basisObservationId'));
       CREATE INDEX IF NOT EXISTS continuity_perception_deleted_key ON continuity_perception_events(json_extract(payload,'$.deletionKey'));`);
     // FTS5 otherwise retains deleted tokens in its own historical segments.
@@ -234,6 +236,7 @@ export function createContinuityStore({ path, clock = Date.now }) {
   }
   function deleteMemory(previous) {
     for(const id of affectedEvidenceIds(previous.id)){
+      db.prepare("DELETE FROM continuity_feedback WHERE EXISTS (SELECT 1 FROM json_each(continuity_feedback.payload,'$.evidenceRefs') ref WHERE json_extract(ref.value,'$.id')=?)").run(id);
       const record=get(id);
       for(const table of TABLE_LIST)db.prepare(`DELETE FROM ${table} WHERE id=?`).run(id);
       cacheDelete(id);
@@ -255,6 +258,38 @@ export function createContinuityStore({ path, clock = Date.now }) {
     };
   }
   return {
+    recordFeedback(feedback){
+      const id=text(feedback.id,'feedback_id',200),deskId=text(feedback.deskId,'deskId',200);
+      const message=text(feedback.message,'feedback_message',100);
+      if(Array.from(message).length>16)throw new TypeError('Feedback message too long');
+      const createdAt=timestamp(feedback.createdAt),expiresAt=timestamp(feedback.expiresAt);
+      if(expiresAt<=createdAt||!Number.isSafeInteger(feedback.epoch)||feedback.epoch<0)throw new TypeError('Invalid feedback scope');
+      if(!Array.isArray(feedback.evidenceRefs)||feedback.evidenceRefs.length<1||feedback.evidenceRefs.length>4)throw new TypeError('Feedback evidence required');
+      const evidenceRefs=feedback.evidenceRefs.map(ref=>{
+        const record=get(text(ref.id,'feedback_evidence',200));
+        if(!record||record.kind!=='perception'||!LIVE.has(record.status)||record.deskId!==deskId||record.revision!==ref.revision)throw new TypeError('Feedback evidence not current');
+        return {id:record.id,revision:record.revision};
+      });
+      const previous=unpack(db.prepare('SELECT payload FROM continuity_feedback WHERE id=?').get(id));
+      if(previous){if(previous.deskId!==deskId)throw new TypeError('Feedback desk mismatch');return previous;}
+      const entry={id,deskId,epoch:feedback.epoch,message,inference:text(feedback.inference,'feedback_inference',600),createdAt,expiresAt,evidenceRefs,status:'requested',presentationStatus:'requested',semanticStatus:'model_inferred'};
+      if(feedback.uncertainty)entry.uncertainty=text(feedback.uncertainty,'feedback_uncertainty',400);
+      if(['toward_proxy','face_visible','unknown'].includes(feedback.facingAtRequest))entry.facingAtRequest=feedback.facingAtRequest;
+      db.prepare('INSERT INTO continuity_feedback(id,desk_id,created_at,payload) VALUES(?,?,?,?)').run(id,deskId,createdAt,JSON.stringify(entry));
+      return structuredClone(entry);
+    },
+    listFeedback({deskId=profile().deskId,limit=50}={}){
+      deskId=text(deskId,'deskId',200);
+      if(!Number.isInteger(limit)||limit<1||limit>100)throw new TypeError('Invalid feedback limit');
+      // Source corrections withdraw their interpretation; normal disconnects do not.
+      return db.prepare(`SELECT f.payload FROM continuity_feedback f WHERE f.desk_id=? AND NOT EXISTS (
+        SELECT 1 FROM json_each(f.payload,'$.evidenceRefs') ref WHERE NOT EXISTS (
+          SELECT 1 FROM continuity_perception_events p WHERE p.id=json_extract(ref.value,'$.id')
+            AND p.revision=json_extract(ref.value,'$.revision') AND p.status IN ('active','tentative')
+            AND json_extract(p.payload,'$.deskId')=f.desk_id
+            AND p.revision=(SELECT MAX(revision) FROM continuity_perception_events WHERE id=p.id)
+        )) ORDER BY f.created_at DESC,f.rowid DESC LIMIT ?`).all(deskId,limit).map(unpack);
+    },
     recordPerception({ basisObservationId, description, activity, entities = [], uncertainties = [], visualSubjects = [] }, { observation, mode, deskId = profile().deskId, learningUse = 'unknown', learningVersion } = {}) {
       if (/fixture|synthetic/i.test(mode ?? '') || !['camera', 'replay'].includes(observation?.source)) return { accepted: false, status: 'rejected', reason: 'not_supported' };
       member(learningUse, LEARNING_USES, 'learningUse');

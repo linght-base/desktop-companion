@@ -1,5 +1,5 @@
 {
-  "revision": "ec8d2545f5a89533b737edd719745ec35c1f65e9",
+  "revision": "599223823fe51d2a913ae4b1dd44e123daa8adff",
   "files": [
     {
       "path": ".gitignore",
@@ -28,8 +28,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 3161,
-      "sha256": "e603a1e2555fa0b623d00d3196a809b8dff25d5145c73d2a457b630208d6f076"
+      "bytes": 16192,
+      "sha256": "aaa49e8510875d685b776fa1d098b13db8fa36dd265f5e2378481b7027cc4431"
     },
     {
       "path": "THIRD_PARTY_NOTICES.md",
@@ -148,8 +148,8 @@
     },
     {
       "path": "apps/companion-sim/src/continuity-store.mjs",
-      "bytes": 43602,
-      "sha256": "d9675200af208d891070535e42a5db135ddff08b0408aa6dbeda68a4d43a6299"
+      "bytes": 46901,
+      "sha256": "e795bae1eb9f77e51185826cb1856bc9226421fb0b7018bfe152b3d22cadaf13"
     },
     {
       "path": "apps/companion-sim/src/contracts.d.ts",
@@ -163,8 +163,8 @@
     },
     {
       "path": "apps/companion-sim/src/controller.mjs",
-      "bytes": 117967,
-      "sha256": "22a94b7653b34382b026f83abd256b0e3f85562191bd4bdcecf6988f41f573f2"
+      "bytes": 118236,
+      "sha256": "62db756493f3c1939efb75e429a8dc9027474f14606595bf55f916abecc42329"
     },
     {
       "path": "apps/companion-sim/src/day-window.mjs",
@@ -383,8 +383,8 @@
     },
     {
       "path": "apps/companion-sim/web/app.js",
-      "bytes": 50352,
-      "sha256": "2fd1bbfa73df11fdc7d33ec451bbcff0ab2d894065640c265dc93ca6e95f9dd7"
+      "bytes": 50329,
+      "sha256": "1925ecd44cacadfce83843540ec84a36d8a6fd9e5394743b9232b65004942b4a"
     },
     {
       "path": "apps/companion-sim/web/body-presentation.js",
@@ -585,6 +585,21 @@
       "path": "prepare.py",
       "bytes": 6023,
       "sha256": "4b9613660dc196ce9b890f6e89e79b31a942901258f2eb4a4a49c4a1f3643fd0"
+    },
+    {
+      "path": "readme-assets/console.png",
+      "bytes": 48461,
+      "sha256": "b96d52dff9c86539007e602663ed9a407300a4552c1d4ae5b137851d8ce044b1"
+    },
+    {
+      "path": "readme-assets/cover.jpg",
+      "bytes": 156440,
+      "sha256": "a824d59748330494a06f5f6f2b535a48413c5f389d5d509b597b4ddd5ae7c187"
+    },
+    {
+      "path": "readme-assets/robot-on-desk.jpg",
+      "bytes": 59755,
+      "sha256": "c5db07dd4399d1992c5c9bb393a6377b3442788f95658ae37c0890f4c04ebf63"
     },
     {
       "path": "scripts/companion_cognition.py",

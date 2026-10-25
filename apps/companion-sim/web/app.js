@@ -73,7 +73,7 @@ function clearDisconnectedView(label){
  text('camera-status','连接中断');text('video-connection-status','实时视频不可用');$('video-connection-status').dataset.tone='warning';
  text('preview-label',label);text('freshness-value','无实时画面');text('coverage-value','未观察');
  roundScreen.update({enabled:false});presentationReporter.update({enabled:false});viewGuidance.update({enabled:false});
- renderUserFeedback($('user-feedback-panel'),{...snapshot,enabled:false,userFeedback:null,userFeedbackHistory:[]});
+ renderUserFeedback($('user-feedback-panel'),{...snapshot,enabled:false,userFeedback:null});
  renderFeedbackConversations($('understanding-dialogue'),{...snapshot,enabled:false,userFeedback:null},{latestOnly:true});
  renderFeedbackConversations($('history-dialogue'),{...snapshot,enabled:false,userFeedback:null});
  $('camera-start').disabled=true;$('camera-stop').disabled=true;$('camera-share').disabled=true;$('camera-share').checked=false;
