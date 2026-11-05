@@ -4,5 +4,8 @@ readme-assets/cover.jpg filter=lfs diff=lfs merge=lfs -text
 readme-assets/robot-on-desk.jpg filter=lfs diff=lfs merge=lfs -text
 readme-assets/console.png filter=lfs diff=lfs merge=lfs -text
 readme-assets/companionship.png filter=lfs diff=lfs merge=lfs -text
+readme-assets/companionship.en.png filter=lfs diff=lfs merge=lfs -text
 readme-assets/records.png filter=lfs diff=lfs merge=lfs -text
+readme-assets/records.en.png filter=lfs diff=lfs merge=lfs -text
 readme-assets/memory.png filter=lfs diff=lfs merge=lfs -text
+readme-assets/memory.en.png filter=lfs diff=lfs merge=lfs -text
