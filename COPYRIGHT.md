@@ -1,6 +1,6 @@
 # Copyright
 
-Copyright (c) 2026 Shenzhen Guangbo Technology Co., Ltd.
+Copyright (c) 2026 [深圳光泊科技有限公司](https://linght.com/) (Shenzhen Guangbo Technology Co., Ltd.).
 
 The original code in this project is copyrighted by Shenzhen Guangbo Technology Co., Ltd.
 
