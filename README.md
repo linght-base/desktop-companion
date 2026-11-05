@@ -6,6 +6,8 @@ https://github.com/user-attachments/assets/eadb1c1a-6a71-452c-96b9-f990ef125846
 
 **不用先开口，它会留意你，也记得刚才。**
 
+由 [深圳光泊科技有限公司](https://linght.com/)（Linght / 光泊）开源 · 官网介绍：[光泊实验室 · 桌面伙伴](https://linght.com/lab.html)
+
 一个放在桌上的无声陪伴机器人。你工作、看书、看看手机，它通过自己的摄像头观察，用眼神、轻微转头和一句短话回应；把实际看到的片段与自己的回应记下来，再将值得回忆的瞬间画成漫画。
 
 [观看真机演示](https://github.com/linght-base/desktop-companion/releases/download/v0.1.0/desktop-companion-real-demo.mp4) · [下载完整工程包](https://github.com/linght-base/desktop-companion/releases/download/v0.1.0/desktop-companion-v0.1.0.zip) · [安装说明](INSTALL.md) · [开发基础](#基于什么开发)
@@ -272,7 +274,7 @@ config/integration/              隔离依赖与人物位置模型来源
 | 无法生成漫画 | 是否已有可靠记录、是否具备图片服务权限、图片服务 Key 是否配置 |
 | 修改配置后不再观察 | 保存模型设置会暂停陪伴，需要重新点击“启动” |
 
-[Apache-2.0](LICENSE) · [第三方组件与素材来源](THIRD_PARTY_NOTICES.md) · [更详细的安装说明](INSTALL.md)
+[Apache-2.0](LICENSE) · [第三方组件与素材来源](THIRD_PARTY_NOTICES.md) · [更详细的安装说明](INSTALL.md) · [深圳光泊科技有限公司](https://linght.com/)
 
 ## 用户隐私
 
