@@ -1,3 +1,5 @@
+中文 | [English](README.en.md)
+
 https://github.com/user-attachments/assets/eadb1c1a-6a71-452c-96b9-f990ef125846
 
 *18 秒作品介绍：陪伴、记录与值得回忆。*
